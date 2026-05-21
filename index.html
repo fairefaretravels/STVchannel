@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>STV Radiomeltdown</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- VHS Overlay -->
+<div class="noise"></div>
+<div class="scanlines"></div>
+
+<!-- Top Bar -->
+<header class="topbar">
+  <div class="logo">
+    STV RADIOMELTDOWN
+  </div>
+
+  <div class="clock" id="clock">
+    2:13 AM
+  </div>
+</header>
+
+<!-- Main TV Layout -->
+<main class="tv-layout">
+
+  <!-- TV Screen -->
+  <section class="tv-screen">
+
+    <video
+      id="player"
+      autoplay
+      muted
+      playsinline
+    ></video>
+
+    <div class="tv-overlay">
+      <div class="channel-tag" id="channelName">
+        CH 01 — STV LIVE
+      </div>
+
+      <div class="now-playing">
+        NOW PLAYING
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Guide -->
+  <aside class="guide">
+
+    <h2>CHANNEL GUIDE</h2>
+
+    <div class="guide-list" id="guideList"></div>
+
+  </aside>
+
+</main>
+
+<!-- Controls -->
+<footer class="controls">
+
+  <button id="prevBtn">CH -</button>
+
+  <button id="nextBtn">CH +</button>
+
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
