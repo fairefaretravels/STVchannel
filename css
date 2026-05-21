@@ -1,0 +1,180 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  color:#fff;
+  font-family:'Orbitron', sans-serif;
+  overflow:hidden;
+}
+
+/* TOP BAR */
+
+.topbar{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
+  border-bottom:1px solid #222;
+  background:#000;
+}
+
+.logo{
+  color:#f5a300;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.clock{
+  color:#ff3d3d;
+  font-size:20px;
+}
+
+/* MAIN */
+
+.tv-layout{
+  display:grid;
+  grid-template-columns: 1fr 350px;
+  height:calc(100vh - 130px);
+}
+
+/* TV SCREEN */
+
+.tv-screen{
+  position:relative;
+  background:#000;
+  overflow:hidden;
+}
+
+video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:contrast(1.1) saturate(1.1);
+}
+
+/* OVERLAY */
+
+.tv-overlay{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  z-index:5;
+}
+
+.channel-tag{
+  background:rgba(0,0,0,.7);
+  border:1px solid #f5a300;
+  padding:10px 14px;
+  color:#f5a300;
+  margin-bottom:10px;
+}
+
+.now-playing{
+  background:rgba(0,0,0,.7);
+  padding:8px 12px;
+  font-size:14px;
+}
+
+/* GUIDE */
+
+.guide{
+  background:#080808;
+  border-left:1px solid #222;
+  padding:20px;
+}
+
+.guide h2{
+  color:#f5a300;
+  margin-bottom:20px;
+}
+
+.guide-item{
+  padding:15px;
+  margin-bottom:10px;
+  border:1px solid #222;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.guide-item:hover{
+  border-color:#f5a300;
+  background:#111;
+}
+
+.active-channel{
+  border-color:#f5a300;
+  background:#171717;
+}
+
+/* CONTROLS */
+
+.controls{
+  height:60px;
+  background:#000;
+  border-top:1px solid #222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+}
+
+button{
+  background:#111;
+  border:1px solid #f5a300;
+  color:#f5a300;
+  padding:12px 24px;
+  cursor:pointer;
+  font-family:'Orbitron', sans-serif;
+}
+
+button:hover{
+  background:#f5a300;
+  color:#000;
+}
+
+/* VHS EFFECTS */
+
+.scanlines{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+  repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index:99;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.03;
+  background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+  z-index:98;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .tv-layout{
+    grid-template-columns:1fr;
+  }
+
+  .guide{
+    display:none;
+  }
+
+}
